@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Inline Edit With Lightning Datatable in LWC">
+        <template if:true={contacts.data}>
+            <lightning-datatable key-field="Id" data={contacts.data} columns={columns} onsave={handleSave}
+                draft-values={saveDraftValues} onrowselection={handleRowSelection} show-row-number-column>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+    <lightning-card title="Payment Information">
+        <lightning-layout-item size="6">
+            <!-- Displaying Payment Information. -->
+            <div class="slds-p-left_medium">
+                <p>Total payment amount: <lightning-formatted-text value={totalPaymentAmount}>
+                    </lightning-formatted-text>
+                </p>
+                <p>Most recent payment date: <lightning-formatted-text value={mostRecentPaymentDate}>
+                    </lightning-formatted-text>
+                </p>
+            </div>
+        </lightning-layout-item>
+        <lightning-card title="New Contact">
+            <lightning-record-edit-form record-id={selectedId} object-api-name="Contact">
+                <lightning-messages>
+                </lightning-messages>
+                <lightning-input-field field-name="FirstName">
+                </lightning-input-field>    
+                <lightning-input-field field-name="LastName">
+                </lightning-input-field>
+                <lightning-input-field field-name="Email">
+                </lightning-input-field>
+                <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update">
+                </lightning-button>
+            </lightning-record-edit-form>
+        </lightning-card>
+        <template if:true={contacts.data}>
+            <lightning-card title="New Payment Record" icon-name="standard:account">
+                <div class="slds-p-around_x-small">
+                    <lightning-input label="Name" value={rec.Name}></lightning-input>
+                    <lightning-input label="Amount" value={rec.Amount__c}></lightning-input>
+                    <lightning-input label="Contact" value={rec.Contact__c}></lightning-input>
+                    <lightning-button label="Save" onclick={handleClick}></lightning-button>
+                </div>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>
