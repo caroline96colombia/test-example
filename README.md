@@ -25,6 +25,11 @@ Please include unit tests like you normally would in actual development projects
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
+## Result
+
+![image](https://user-images.githubusercontent.com/87058939/124710059-da73ab00-dec1-11eb-93f4-432face40ca7.png)
+
+
 ## How Do You Plan to Deploy Your Changes?
 
 Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
